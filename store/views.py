@@ -20,8 +20,8 @@ RZP_KEY_SECRET=config('RZP_KEY_SECRET')
 
 def sent_otp_phone(otp):
     from twilio.rest import Client
-    account_sid = 'AC14ecdf07af3fb8c319710c3146d4ca93'
-    auth_token = 'd07ce839953cbb34684eae11dd5fc80c'
+    account_sid = config('TWILIO_TO_ACCOUNT_SID')
+    auth_token = config('TWILIO_AUTH_TOKEN')
     client = Client(account_sid, auth_token)
     message = client.messages.create(
     from_='+15633629101',
